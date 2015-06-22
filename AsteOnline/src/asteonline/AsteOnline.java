@@ -7,7 +7,7 @@ package asteonline;
 
 /**
  *
- * @author sergio
+ * @author BancoDeiPiccoliPugni
  */
 public class AsteOnline {
 
