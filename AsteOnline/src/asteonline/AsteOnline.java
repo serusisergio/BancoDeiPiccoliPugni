@@ -16,15 +16,15 @@ public class AsteOnline {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Moneta moneta = new Moneta(new Float(1.0));
-        OggettoMateriale oggettoMateriale = new OggettoMateriale(new Float(20.0), "Carretto", "Questo oggetto è una carretta", Category.Vehicles);
+        Money money = new Money(new Float(1.0));
+        MaterialObject materialObject = new MaterialObject(new Float(20.0), "Carretto", "Questo oggetto è una carretta", Category.Vehicles);
 
-        System.out.println("Valore moneta: " + moneta.valore);
+        System.out.println("Valore moneta: " + money.value);
 
-        System.out.println("\nNome: " + oggettoMateriale.nome);
-        System.out.println("Valore: " + oggettoMateriale.valore);
-        System.out.println("Descrizione: " + oggettoMateriale.descrizione);
-        System.out.println("Categoria: " + oggettoMateriale.category);
+        System.out.println("\nName: " + materialObject.name);
+        System.out.println("value: " + materialObject.value);
+        System.out.println("Description: " + materialObject.description);
+        System.out.println("Category: " + materialObject.category);
     }
 
 }
