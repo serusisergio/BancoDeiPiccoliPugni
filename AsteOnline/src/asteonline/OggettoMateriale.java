@@ -10,5 +10,12 @@ package asteonline;
  * @author sergio
  */
 public class OggettoMateriale extends Bene{
+    String categoria;
     
+    public OggettoMateriale(float valore,String nome,String descrizione,String categoria){
+        this.valore=valore;
+        this.nome=nome;
+        this.descrizione=descrizione;
+        this.categoria=categoria;
+    }
 }

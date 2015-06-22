@@ -10,5 +10,8 @@ package asteonline;
  * @author sergio
  */
 public abstract class Bene {
-    
+    String nome;
+    float valore;
+    String descrizione;  
+  
 }

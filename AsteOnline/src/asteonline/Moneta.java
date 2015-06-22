@@ -11,4 +11,9 @@ package asteonline;
  */
 public class Moneta extends Bene{
     
+    public Moneta(float valore,String nome,String descrizione){
+        this.valore=valore;
+        this.nome=nome;
+        this.descrizione=descrizione;
+    }
 }
