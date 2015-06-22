@@ -11,5 +11,9 @@ package asteonline;
  */
 public abstract class Bene {
     float valore;
+
+    public float getValore() {
+        return valore;
+    }
   
 }
