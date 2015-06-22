@@ -20,4 +20,17 @@ public class OggettoMateriale extends Bene{
         this.descrizione=descrizione;
         this.categoria=categoria;
     }
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getDescrizione() {
+        return descrizione;
+    }  
+
 }
