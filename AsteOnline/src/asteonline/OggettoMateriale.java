@@ -9,20 +9,21 @@ package asteonline;
  *
  * @author sergio
  */
-public class OggettoMateriale extends Bene{
-    String categoria;
+public class OggettoMateriale extends Bene {
+
+    Category category;
     String nome;
     String descrizione;
-    
-    public OggettoMateriale(float valore,String nome,String descrizione,String categoria){
-        this.valore=valore;
-        this.nome=nome;
-        this.descrizione=descrizione;
-        this.categoria=categoria;
+
+    public OggettoMateriale(float valore, String nome, String descrizione, Category category) {
+        this.valore = valore;
+        this.nome = nome;
+        this.descrizione = descrizione;
+        this.category = category;
     }
 
-    public String getCategoria() {
-        return categoria;
+    public Category getCategoria() {
+        return category;
     }
 
     public String getNome() {
@@ -31,6 +32,6 @@ public class OggettoMateriale extends Bene{
 
     public String getDescrizione() {
         return descrizione;
-    }  
+    }
 
 }
