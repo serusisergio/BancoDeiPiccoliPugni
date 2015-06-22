@@ -11,6 +11,8 @@ package asteonline;
  */
 public class OggettoMateriale extends Bene{
     String categoria;
+    String nome;
+    String descrizione;
     
     public OggettoMateriale(float valore,String nome,String descrizione,String categoria){
         this.valore=valore;
