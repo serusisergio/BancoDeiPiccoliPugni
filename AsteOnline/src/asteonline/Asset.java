@@ -12,7 +12,7 @@ package asteonline;
 public abstract class Asset {
     float value;
 
-    public float getValore() {
+    public float getValue() {
         return value;
     }
   

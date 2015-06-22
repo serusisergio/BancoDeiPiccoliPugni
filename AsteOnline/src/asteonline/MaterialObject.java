@@ -22,7 +22,7 @@ public class MaterialObject extends Asset {
         this.category = category;
     }
 
-    public Category getCategoria() {
+    public Category getCategory() {
         return category;
     }
 
