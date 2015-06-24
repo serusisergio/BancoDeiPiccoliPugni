@@ -18,7 +18,7 @@ import java.util.UUID;
 public class Auction extends Observable {
     private final UUID id;
     private final LocalDateTime createdAt;
-    private final LocalDateTime closedAt;
+    private LocalDateTime closedAt;
     private final Item sellingItem;
     private List<Offer> offers;
     
@@ -33,6 +33,14 @@ public class Auction extends Observable {
     
     public void addOffer(Offer item) {
         this.getOffers().add(item);
+    }
+    
+    public boolean close() {
+        this.closedAt = LocalDateTime.now();
+        this.notifyObservers(id);
+        this.setChanged();
+        
+        return true;
     }
     
     public Boolean isClosed() {
