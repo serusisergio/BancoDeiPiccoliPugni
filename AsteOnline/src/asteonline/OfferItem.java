@@ -12,9 +12,9 @@ package asteonline;
 public class OfferItem {
     private final String offerName;
     private final String offerDesc;
-    private final String offerCat;
+    private final Category offerCat;
     
-    public OfferItem(String name, String desc, String cat)
+    public OfferItem(String name, String desc, Category cat)
     {
         this.offerName = name;
         this.offerDesc = desc;
@@ -29,7 +29,7 @@ public class OfferItem {
         return offerDesc;
     }
 
-    public String getOfferCat() {
+    public Category getOfferCat() {
         return offerCat;
     }
 }
