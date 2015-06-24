@@ -29,6 +29,11 @@ public class TransactionManager {
     private TransactionManager() {
         this.transaction = new ArrayList<>();
     }
+    /**
+     * 
+     * @param a è l'asta a cui si sta partecipando
+     * @param o è la lista diggetti che stiamo utilizzando per pagare
+     */
     public boolean Pay(Auction a, Offer o) {
         if(a== null || o==null)
             throw new IllegalArgumentException();
