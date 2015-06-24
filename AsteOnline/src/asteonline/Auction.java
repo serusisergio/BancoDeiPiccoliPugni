@@ -21,7 +21,10 @@ public class Auction extends Observable {
     private LocalDateTime closedAt;
     private final Item sellingItem;
     private List<Offer> offers;
-    
+    /**
+     * 
+     * @param item rappresenta l' oggetto.
+     */
     public Auction(Item item)
     {
         this.offers = new ArrayList<>();
@@ -30,10 +33,18 @@ public class Auction extends Observable {
         this.closedAt = LocalDateTime.now();
         this.sellingItem = item;
     }
+    /**
+     * 
+     *  addOffer offre un item  
+     */
     
     public void addOffer(Offer item) {
         this.getOffers().add(item);
     }
+    /**
+     * 
+     * @return restituisce se l'asta è stata chiusa o meno
+     */
     
     public boolean close() {
         this.closedAt = LocalDateTime.now();

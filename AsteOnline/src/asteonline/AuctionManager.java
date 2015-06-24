@@ -40,7 +40,11 @@ public class AuctionManager {
         boolean result = this.auctions.add(a);
         return result;
     }
-    
+    /**
+     * 
+     * @param id è l'ID univoco dell'asta che viene ricercata
+     * 
+     */
     public Auction find(UUID id) {
         if(id == null)
             throw new IllegalArgumentException();
@@ -53,7 +57,10 @@ public class AuctionManager {
         }
         return result;
     }
-    
+    /**
+     * 
+     * remove serve a rimuovere l'asta
+     */
     public boolean remove(UUID id) {
         if(id == null)
             throw new IllegalArgumentException();
@@ -72,7 +79,12 @@ public class AuctionManager {
         
         return result;
     }
-    
+    /**
+     * 
+     * @param dest è l'asta a cui si sta partecipando
+     * @param o è l' oggetto che si sta offrendo
+     * 
+     */
     public boolean makeOffer(UUID dest, Offer o) {
         if(dest == null || o == null)
             throw new IllegalArgumentException();
