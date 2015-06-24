@@ -1,0 +1,41 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package asteonline;
+
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Observable;
+
+/**
+ *
+ * @author gcarl
+ */
+public class Auction extends Observable {
+    private final int id;
+    private final LocalDateTime createdAt;
+    private final LocalDateTime closedAt;
+    private final OfferItem sellingItem;
+    private List<Offer> offers;
+    
+    public Auction(OfferItem item)
+    {
+        this.offers = new ArrayList<>();
+        this.id = 100; //TODO: Random number
+        this.createdAt = LocalDateTime.now();
+        this.closedAt = LocalDateTime.now();
+        this.sellingItem = item;
+    }
+    
+    public void addOffer(Offer item) {
+        this.offers.add(item);
+    }
+    
+    public Boolean isClosed() {
+        return LocalDateTime.now().isBefore(closedAt);
+    }
+}
+
