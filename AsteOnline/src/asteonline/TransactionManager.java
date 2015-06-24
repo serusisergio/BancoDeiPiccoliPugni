@@ -30,11 +30,16 @@ public class TransactionManager {
         this.transaction = new ArrayList<>();
     }
     public boolean Pay(Auction a, Offer o) {
-        if(a== null || o==null) throw new IllegalArgumentException();
-        Transaction t= new Transaction(null, a, o);
-        boolean res= false;
-        res=this.transaction.add(t);
-        return res;
+        if(a== null || o==null)
+            throw new IllegalArgumentException();
         
+        User u = UserManager.getInstance().getSignedInUser();
+        Transaction t = new Transaction(u, a, o);
+        
+        boolean res = false;
+        if(t != null)
+            res = this.transaction.add(t);
+        
+        return res;
     }
 }

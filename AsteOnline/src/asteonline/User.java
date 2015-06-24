@@ -16,7 +16,7 @@ public class User {
     private final String username;
     private final String password;
     
-    public User(int id, String name, String pwd)
+    public User(String name, String pwd)
     {
         this.userId = java.util.UUID.randomUUID();
         this.username = name;

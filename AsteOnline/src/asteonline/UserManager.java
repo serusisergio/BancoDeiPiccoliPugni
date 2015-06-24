@@ -16,6 +16,7 @@ import java.util.UUID;
 public class UserManager {
     private static UserManager instance = null;   
     private static final Object sync = new Object();
+    private User signedInUser = null;
     private List<User> users;
     
     public static UserManager getInstance(){
@@ -58,10 +59,14 @@ public class UserManager {
     }
     
     public void login() {
-        throw new UnsupportedOperationException();
+        this.signedInUser = new User("caas@isw.com","verybello");
     }
     
     public void logout() {
-        throw new UnsupportedOperationException();
+        this.signedInUser = null;
+    }
+    
+    public User getSignedInUser() {
+        return this.signedInUser;
     }
 }
