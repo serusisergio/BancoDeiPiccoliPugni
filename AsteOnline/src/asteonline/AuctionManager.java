@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package asteonline;
 
 import java.util.ArrayList;
@@ -10,7 +5,7 @@ import java.util.List;
 import java.util.UUID;
 
 /**
- *
+ * Class in charge to manage and save the auctions.
  * @author gcarl
  */
 public class AuctionManager {
@@ -29,10 +24,19 @@ public class AuctionManager {
         this.auctions = new ArrayList<>();
     }
     
+    /**
+     * Returns the number of the auctions saved.
+     * @return int - number of the auctions
+     */
     public int auctionsCount() {
         return this.auctions.size();
     }
     
+    /**
+     * Adds an auction in the auction list
+     * @param a Auction the auction to add
+     * @return boolean - true if the add is success
+     */
     public boolean add(Auction a) {
         if(a == null)
             throw new IllegalArgumentException();
@@ -41,9 +45,9 @@ public class AuctionManager {
         return result;
     }
     /**
-     * 
-     * @param id è l'ID univoco dell'asta che viene ricercata
-     * 
+     * Returns the auction corresponding to the UUID passed
+     * @param id UUID the identifier of the auction
+     * @return Auction
      */
     public Auction find(UUID id) {
         if(id == null)
@@ -58,8 +62,9 @@ public class AuctionManager {
         return result;
     }
     /**
-     * 
-     * remove serve a rimuovere l'asta
+     * Removes the auction corresponding to the UUID passed.
+     * @param id The UUID of the auction to remove.
+     * @return boolean true if the remove is succes.
      */
     public boolean remove(UUID id) {
         if(id == null)
@@ -80,9 +85,10 @@ public class AuctionManager {
         return result;
     }
     /**
-     * 
-     * @param dest è l'asta a cui si sta partecipando
-     * @param o è l' oggetto che si sta offrendo
+     * Makes an offer in the auction corresponding to the UUID passed.
+     * @param dest The UUID of the auction
+     * @param o The offer to add
+     * @return boolean - true if is success
      * 
      */
     public boolean makeOffer(UUID dest, Offer o) {

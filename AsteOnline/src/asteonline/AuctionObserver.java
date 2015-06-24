@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package asteonline;
 
 import java.util.Observable;
@@ -10,11 +5,16 @@ import java.util.Observer;
 import java.util.UUID;
 
 /**
- *
+ * Observer used to notify the users of the state change of the auctions in which they bidded.
  * @author gcarl
  */
 public class AuctionObserver implements Observer {
-
+    
+    /**
+     * updates the observers in the list
+     * @param o the object that triggered the update
+     * @param arg the UUID of the auction that changed state
+     */
     @Override
     public void update(Observable o, Object arg) {
         UUID param = (UUID)arg;

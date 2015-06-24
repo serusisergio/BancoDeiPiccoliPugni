@@ -1,15 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package asteonline;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
+ * Represents an offer in the system. An offer is a money amount and/or a list of items.
  * @author gcarl
  */
 public class Offer {
@@ -17,6 +12,11 @@ public class Offer {
     private final List<Item> items;
     private final User offerOwner;
     
+    /**
+     * Instantiate an offer with the parameters passed
+     * @param amount the money amount to offer. 
+     * @param owner 
+     */
     public Offer(float amount, User owner)
     {
         this.money = amount;
