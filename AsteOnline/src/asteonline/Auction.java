@@ -19,10 +19,10 @@ public class Auction extends Observable {
     private final UUID id;
     private final LocalDateTime createdAt;
     private final LocalDateTime closedAt;
-    private final OfferItem sellingItem;
+    private final Item sellingItem;
     private List<Offer> offers;
     
-    public Auction(OfferItem item)
+    public Auction(Item item)
     {
         this.offers = new ArrayList<>();
         this.id = java.util.UUID.randomUUID();

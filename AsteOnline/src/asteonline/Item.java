@@ -9,12 +9,12 @@ package asteonline;
  *
  * @author gcarl
  */
-public class OfferItem {
+public class Item {
     private final String offerName;
     private final String offerDesc;
     private final Category offerCat;
     
-    public OfferItem(String name, String desc, Category cat)
+    public Item(String name, String desc, Category cat)
     {
         this.offerName = name;
         this.offerDesc = desc;
