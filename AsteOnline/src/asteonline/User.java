@@ -5,23 +5,25 @@
  */
 package asteonline;
 
+import java.util.UUID;
+
 /**
  *
  * @author gcarl
  */
 public class User {
-    private final int userId;
+    private final UUID userId;
     private final String username;
     private final String password;
     
     public User(int id, String name, String pwd)
     {
-        this.userId = id;
+        this.userId = java.util.UUID.randomUUID();
         this.username = name;
         this.password = pwd;
     }
 
-    public int getId() {
+    public UUID getId() {
         return userId;
     }
 
