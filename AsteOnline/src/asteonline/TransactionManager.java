@@ -15,7 +15,7 @@ public class TransactionManager {
     
     /**
      * Return the singleton instace.
-     * @return 
+     * @return the singleton
      */
     public static TransactionManager getInstance(){
         synchronized(sync) {
