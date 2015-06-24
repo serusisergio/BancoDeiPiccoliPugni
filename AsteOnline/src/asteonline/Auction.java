@@ -9,13 +9,14 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Observable;
+import java.util.UUID;
 
 /**
  *
  * @author gcarl
  */
 public class Auction extends Observable {
-    private final int id;
+    private final UUID id;
     private final LocalDateTime createdAt;
     private final LocalDateTime closedAt;
     private final Item sellingItem;
@@ -24,18 +25,38 @@ public class Auction extends Observable {
     public Auction(Item item)
     {
         this.offers = new ArrayList<>();
-        this.id = 100; //TODO: Random number
+        this.id = java.util.UUID.randomUUID();
         this.createdAt = LocalDateTime.now();
         this.closedAt = LocalDateTime.now();
         this.sellingItem = item;
     }
     
     public void addOffer(Offer item) {
-        this.offers.add(item);
+        this.getOffers().add(item);
     }
     
     public Boolean isClosed() {
-        return LocalDateTime.now().isBefore(closedAt);
+        return LocalDateTime.now().isBefore(getClosedAt());
+    }
+
+    public UUID getId() {
+        return id;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public LocalDateTime getClosedAt() {
+        return closedAt;
+    }
+
+    public OfferItem getSellingItem() {
+        return sellingItem;
+    }
+
+    public List<Offer> getOffers() {
+        return offers;
     }
 }
 
