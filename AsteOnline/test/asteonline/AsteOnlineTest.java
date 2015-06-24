@@ -72,7 +72,7 @@ public class AsteOnlineTest {
         
         Auction first = AuctionManager.getInstance().find(mockId);
         Offer winningOffer = first.getOffers().get(0);
-        boolean result = TransactionManager.getInstance().Pay(first, winningOffer);
+        boolean result = TransactionManager.getInstance().pay(first, winningOffer);
         Assert.assertTrue(result);
     }
     

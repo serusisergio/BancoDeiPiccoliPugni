@@ -1,15 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package asteonline;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
+ * The class in charge to manage and memorize the transactions.
  * @author simone
  */
 public class TransactionManager {
@@ -18,7 +13,10 @@ public class TransactionManager {
     private static final Object sync = new Object();
     private List<Transaction> transaction;
     
-    
+    /**
+     * Return the singleton instace.
+     * @return 
+     */
     public static TransactionManager getInstance(){
         synchronized(sync) {
             if(instance == null) instance = new TransactionManager();
@@ -29,13 +27,14 @@ public class TransactionManager {
     private TransactionManager() {
         this.transaction = new ArrayList<>();
     }
+    
     /**
-     * 
-     * @param a è l'asta a cui si sta partecipando
-     * @param o è la lista diggetti che stiamo utilizzando per pagare
-     * @return risultato
+     * Pays the offer in the auction passed as parameters.
+     * @param a the auction
+     * @param o the offer to pay
+     * @return true if the payment is success
      */
-    public boolean Pay(Auction a, Offer o) {
+    public boolean pay(Auction a, Offer o) {
         if(a== null || o==null)
             throw new IllegalArgumentException();
         
