@@ -33,17 +33,25 @@ public class TransactionManager {
      * 
      * @param a è l'asta a cui si sta partecipando
      * @param o è la lista diggetti che stiamo utilizzando per pagare
+     * @return risultato
      */
     public boolean Pay(Auction a, Offer o) {
         if(a== null || o==null)
             throw new IllegalArgumentException();
         
-        User u = UserManager.getInstance().getSignedInUser();
-        Transaction t = new Transaction(u, a, o);
-        
         boolean res = false;
-        if(t != null)
-            res = this.transaction.add(t);
+        User u = UserManager.getInstance().getSignedInUser();
+        if(u != null) {
+            try
+            {
+                Transaction t = new Transaction(u, a, o);
+                res = this.transaction.add(t);
+            }
+            catch(Exception e)
+            {
+                
+            }
+        }
         
         return res;
     }
