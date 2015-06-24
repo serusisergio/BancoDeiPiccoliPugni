@@ -51,7 +51,7 @@ public class Auction extends Observable {
         return closedAt;
     }
 
-    public OfferItem getSellingItem() {
+    public Item getSellingItem() {
         return sellingItem;
     }
 
