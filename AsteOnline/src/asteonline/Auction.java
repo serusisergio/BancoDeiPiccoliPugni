@@ -32,11 +32,31 @@ public class Auction extends Observable {
     }
     
     public void addOffer(Offer item) {
-        this.offers.add(item);
+        this.getOffers().add(item);
     }
     
     public Boolean isClosed() {
-        return LocalDateTime.now().isBefore(closedAt);
+        return LocalDateTime.now().isBefore(getClosedAt());
+    }
+
+    public UUID getId() {
+        return id;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public LocalDateTime getClosedAt() {
+        return closedAt;
+    }
+
+    public OfferItem getSellingItem() {
+        return sellingItem;
+    }
+
+    public List<Offer> getOffers() {
+        return offers;
     }
 }
 
