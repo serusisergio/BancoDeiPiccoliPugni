@@ -14,7 +14,7 @@ import java.util.List;
  */
 public class Offer {
     private final float money;
-    private final List<OfferItem> items;
+    private final List<Item> items;
     private final User offerOwner;
     
     public Offer(float amount, User owner)
@@ -28,7 +28,7 @@ public class Offer {
         return money;
     }
 
-    public List<OfferItem> getItems() {
+    public List<Item> getItems() {
         return items;
     }
 
