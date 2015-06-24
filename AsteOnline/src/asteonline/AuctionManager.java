@@ -25,6 +25,14 @@ public class AuctionManager {
     }
     
     /**
+     * Returns the list of the auctions
+     * @return list of auctions
+     */
+    public List<Auction> getAuctions(){
+        return this.auctions;
+    }
+    
+    /**
      * Returns the number of the auctions saved.
      * @return int - number of the auctions
      */

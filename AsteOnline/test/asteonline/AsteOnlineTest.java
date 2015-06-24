@@ -19,7 +19,7 @@ import static org.junit.Assert.*;
  * @author gcarl
  */
 public class AsteOnlineTest {
-    private UUID mockId = null;
+    private static UUID mockId = null;
     
     public AsteOnlineTest() {
     }
@@ -48,6 +48,7 @@ public class AsteOnlineTest {
     
     @After
     public void tearDown() {
+        AuctionManager.getInstance().getAuctions().clear();
     }
 
     /**
